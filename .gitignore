@@ -10,4 +10,4 @@ venv/
 .env/
 
 # Docker volumes
-postgres/data/
+postgres/
