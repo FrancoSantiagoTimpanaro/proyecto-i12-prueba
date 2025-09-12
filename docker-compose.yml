@@ -2,14 +2,15 @@ version: "3.9"
 
 services:
   postgres:
-    image: postgres:15
+    image: pgrouting/pgrouting:16-3.5-3.8.0
     container_name: postgres_i12
     environment:
       POSTGRES_USER: i12user
       POSTGRES_PASSWORD: i12pass
       POSTGRES_DB: i12db
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/init-scripts:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     networks:
