@@ -1,18 +1,6 @@
-from flask import Flask
-import psycopg2
+from app import create_app
 
-app = Flask(__name__)
+app = create_app()
 
-@app.route("/")
-def hello():
-    try:
-        conn = psycopg2.connect(
-            host="postgres",
-            dbname="i12db",
-            user="i12user",
-            password="i12pass"
-        )
-        conn.close()
-        return "Hello from Flask! ✅ Connected to Postgres"
-    except Exception as e:
-        return f"Error connecting to Postgres: {e}"
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

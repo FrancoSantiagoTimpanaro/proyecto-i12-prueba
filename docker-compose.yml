@@ -27,6 +27,8 @@ services:
     environment:
       - FLASK_APP=app.py
       - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_ENV=development
+      - DATABASE_URL=postgresql://i12user:i12pass@postgres:5432/i12db
     ports:
       - "5000:5000"
     depends_on:

@@ -1,4 +1,5 @@
-flask
+Flask>=2.0
 psycopg2-binary
-sqlalchemy
+Flask-SQLAlchemy
+Flask-Migrate
 alembic
