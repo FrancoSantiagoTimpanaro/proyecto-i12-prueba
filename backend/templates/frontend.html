@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa con Leaflet - Intersecciones</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div id="map"></div>
+
+  <div id="form-container">
+    <h2>Agregar intersección</h2>
+    <form id="locationForm">
+      <label>Nombre del lugar:</label>
+      <input type="text" id="name" placeholder="Ej: Esquina importante" required />
+
+      <label>Intersección (Calle 1 y Calle 2):</label>
+      <input type="text" id="intersection" placeholder="Ej: Calle 2 esquina 62, La Plata" required />
+
+      <button type="submit">Agregar al mapa</button>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+</body>
+</html>
